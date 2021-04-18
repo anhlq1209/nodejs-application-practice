@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center">
+    <aside class="col-sm-4">
+        <div class="card ">
+            <article class="card-body ">
+                <h4 class="card-title mb-4 mt-1 ">Login</h4>
+                <form method="POST" action="/login">
+                    <div class="mb-3 form-group ">
+                        <label>Username</label>
+                        <input name="username" id="username" class="form-control " placeholder="Username" type="text">
+                    </div>
+                    <div class="mb-3 form-group ">
+                        <label>Password</label>
+                        <input name="password" id="password" class="form-control " placeholder="Password " type="password ">
+                    </div>
+                    <div class="mb-3 form-group ">
+                        <div class="checkbox ">
+                            <label> <input name="rememberMe" type="checkbox" class="form-check-input"> Remember Me</label>
+                        </div>
+                    </div>
+                    <div class="mb-3 form-group ">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </aside>
+</div>
+
+<%- contentFor('title') %>
+    Login

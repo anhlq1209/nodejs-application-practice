@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md">
+        <form method="POST" action="/reg">
+            <div class="from-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group form-check">
+                <input name="attend" type="checkbox" class="form-check-input" id="exampleConfirm">
+                <label for="exampleConfirm" class="form-check-label">Will you attend?</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- contentFor('title') %>
+Register
