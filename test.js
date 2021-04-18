@@ -46,9 +46,5 @@ app.get('/', function(req, res) {
     res.render('auth/home');
 });
 
-app.get('/logins', function(req, res) {
-    res.render('user/login-test');
-});
-
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3002;
 app.listen(port, () => { console.log(`Example app listening on port ${port}!`); });
