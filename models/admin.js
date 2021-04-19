@@ -1,8 +1,7 @@
-const { DataTypes } = require('sequelize');
+const { Sequelize, Model, DataTypes } = require('sequelize');
 const db = require('../config/db');
 
 const Admin = db.define('Admins', {
-    // Model attributes are defined here
     name: {
         type: DataTypes.STRING,
         allowNull: false,

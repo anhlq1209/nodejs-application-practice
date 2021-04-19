@@ -1,8 +1,17 @@
-const db = require('./');
+//         Conection DB, test DB, 
 
-async function(req, res) {
-    try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (console.error);
-}
+const Admin = require('./models/admin');
+const User = require('./models/user');
+const db = require('./config/db');
+
+(async function() {
+    await db.authenticate();
+
+    await db.sync();
+
+    /* await Admin.create({
+        name: 'Quoc Anh',
+        username: 'admin',
+        password: '$2b$10$Kw8jJOIWQC1l2c40AaW6..UgVRIBIDavVVpnf8nLomeAhdeWvvrQ2'
+    }); */
+})().catch(console.error);

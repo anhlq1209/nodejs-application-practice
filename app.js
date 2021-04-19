@@ -46,5 +46,7 @@ app.get('/', function(req, res) {
     res.render('auth/home');
 });
 
-const port = process.env.PORT || 3002;
-app.listen(port, () => { console.log(`Example app listening on port ${port}!`); });
+(async function() {
+    const port = process.env.PORT || 3002;
+    app.listen(port, () => { console.log(`Example app listening on port ${port}!`); });
+}).catch(console.error);
