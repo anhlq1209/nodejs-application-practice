@@ -1,13 +1,32 @@
-const admins = [{
-    id: 1,
-    name: 'Anh',
-    username: 'admin',
-    password: 'admin'
-}];
+const { DataTypes } = require('sequelize');
+const db = require('../config/db');
 
-exports.findById = function(id) {
-    return admins.find(a => a.id === id);
+const Admin = db.define('Admins', {
+    // Model attributes are defined here
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+Admin.findById = async function(id) {
+    return Admin.findByPk(id);
 };
-exports.findByUserName = function(username) {
-    return admins.find(a => a.username === username);
+
+Admin.findByUserName = async function(username) {
+    return Admin.findOne({
+        where: {
+            username,
+        },
+    });
 };
+
+module.exports = Admin;
