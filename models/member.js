@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const db = require('../config/db');
 
-const User = db.define('Users', {
+const Member = db.define('Members', {
     // Model attributes are defined here
     name: {
         type: DataTypes.STRING,
@@ -18,16 +18,16 @@ const User = db.define('Users', {
     }
 });
 
-User.findById = async function(id) {
-    return User.findByPk(id);
+Member.findById = async function(id) {
+    return Member.findByPk(id);
 };
 
-User.findByEmail = async function(email) {
-    return User.findOne({
+Member.findByEmail = async function(email) {
+    return Member.findOne({
         where: {
             email,
         },
     });
 };
 
-module.exports = User;
+module.exports = Member;

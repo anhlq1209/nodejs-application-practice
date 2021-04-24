@@ -1,7 +1,7 @@
-const asyncHaadler = require('express-async-handler');
+const asyncHandler = require('express-async-handler');
 const Admin = require('../models/admin');
 
-module.exports = asyncHaandler(async function(req, res, next) {
+module.exports = asyncHandler(async function(req, res, next) {
     const { adminId } = req.session;
     if (adminId) {
         const admin = await Admin.findById(adminId);
@@ -9,5 +9,6 @@ module.exports = asyncHaandler(async function(req, res, next) {
             res.locals.currentAdmin = admin;
         }
     }
+    /* res.locals.regThanks = false; */
     next();
 });
