@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const express = require('express');
+const bcrypt = require('bcrypt');
 const Admin = require('../models/admin');
 const router = express.Router();
 
@@ -10,10 +11,13 @@ router.get('/', function(req, res) {
 router.post('/', asyncHandler(async function(req, res) {
     const { username, password } = req.body;
     const found = await Admin.findByUserName(username);
-    if (found && (found.password === password)) {
+    console.log(await Admin.findByUserName(username));
+    if (found && bcrypt.compareSync(password, found.password)) {
         req.session.adminId = found.id;
+
         res.redirect('/');
     } else {
+        console.log()
         res.send('Login failed!');
     }
 }));
