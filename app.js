@@ -64,7 +64,7 @@ app.get('/admin', function(req, res) {
 
 (async function() {
     await db.sync();
-
+    console.log('Connected DB');
     const userAdmin = await Admin.findByUserName('admin');
 
     if (userAdmin == null) {
