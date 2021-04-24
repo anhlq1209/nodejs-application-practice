@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const cookieSession = require('cookie-session');
+const bcryptjs = require('bcryptjs');
 
 app = express();
 
@@ -67,10 +68,11 @@ app.get('/admin', function(req, res) {
     const userAdmin = await Admin.findByUserName('admin');
 
     if (userAdmin == null) {
+        const pass = bcryptjs.hashSync('admin', 10);
         await Admin.create({
             name: 'Lê Quốc Anh',
             username: 'admin',
-            password: '$2a$10$ePF1YEsuvEZ4QPIFr/ex9e/nIDoAibQtyW/3XhA7rSLRwafV4Xn9O'
+            password: pass,
         });
     }
 
