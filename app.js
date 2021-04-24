@@ -70,7 +70,7 @@ app.get('/admin', function(req, res) {
         await Admin.create({
             name: 'Lê Quốc Anh',
             username: 'admin',
-            password: '$2b$10$.veZQPdZyBtPBrDPrrQH0uDF8HBj3XjSGwZJepDNCh2QdJDOJ0wAm'
+            password: '$2a$10$ePF1YEsuvEZ4QPIFr/ex9e/nIDoAibQtyW/3XhA7rSLRwafV4Xn9O'
         });
     }
 

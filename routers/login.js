@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const Admin = require('../models/admin');
 const router = express.Router();
 
